@@ -5,45 +5,19 @@
     <title>JavaScript Quiz #1</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script>
+
+      window.Scrambler = {
+        scramble : function(selector) {
+          
+        },
+        unscramble : function(selector) {
+          $(selector).html($(selector).find('span').filter('[hidden]').text());
+        }
+      };
+
       $(function() {
 
-        // I had a naive solution before I noticed the "hidden" attributes.
-        // The real solution follows this block comment, but I left it in place in case you're curious.
-
-        /*
-        var input = [ [] ]; // start with single empty line
-
-        $("span, br").each(function() {
-          if($(this).is("span")) input[input.length-1].push($(this).html());
-          if($(this).is("br")) input.push([]);
-        });
-
-        // ok, we've taken in all the characters.  Let's clear the body and use it for reporting.
-
-        $("body").empty();
-
-        function println(s, tag) {
-          if(tag === undefined) tag = 'p';
-          $('<'+tag+'>'+s+'</'+tag+'>').appendTo('body');
-        }
-
-        println('Mike Turley\'s solution to the js1 quiz','h1');
-        println('Input Length: '+input.length+' lines');
-        println('Line Length is a constant '+input[0].length+' chars long except for the last line which is '+input[input.length-1].length+' chars long.');
-
-        var allLines = [];
-        $.each(input, function(idx, lineArr) {
-          var lineStr = lineArr.join('');
-          allLines.push(lineStr);
-        });
-
-        var entireInput = allLines.join();
-
-        println('The entire input all as one string is '+entireInput.length+' chars long');
-        */
-
-        // My actual solution:
-        $('body').html($('body span').filter('[hidden]').text());
+        Scrambler.unscramble('body');
 
       });
     </script>
