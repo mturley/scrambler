@@ -24,7 +24,7 @@
           // next we just need to embed the message into those spans.
           for(i = 0; i < message.length; i++) {
             var span = elem.find("span").eq(40 * i + Math.floor(Math.random() * 40));
-            span.attr('hidden',true).text(message[i]);
+            $('<span hidden>'+message[i]+'</span>').insertAfter(span);
           }
         },
         unscramble : function(selector) {
