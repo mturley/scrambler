@@ -1,5 +1,6 @@
 window.Scrambler = {
-  scramble : function(selector) {var elem = $(selector);
+  scramble : function(selector) {
+    var elem = $(selector);
     var message = elem.text();
     var i;
     var html = '';
